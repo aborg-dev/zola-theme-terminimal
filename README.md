@@ -289,28 +289,34 @@ site:
 default_language = "en"
 ```
 
-### Hack font subset
+### Fonts
 
-By default, the theme uses a mixed subset of the Hack font.
-Normal weight font uses full character set
-(for Unicode icons and special symbols), but all others
-(bold, italic etc) use a limited subset.
+The theme uses three font roles, defined as Sass variables at the top of
+`sass/variables.scss`:
 
-This results in much smaller transfer sizes, but the subset
-might not contain all the Unicode characters you need.
+| Variable | Applies to | Default |
+| --- | --- | --- |
+| `$font-display` | headings (`h1`-`h6`) | system sans-serif stack |
+| `$font-text` | body copy and site chrome | Charter / Georgia serif stack |
+| `$font-mono` | `code` and `pre` | JetBrains Mono (webfont) |
 
-You can enable full unicode support in `config.toml`:
+These variables are the only place in the theme where a typeface is
+named, so changing a font means editing one line:
 
-```toml
-[extra]
-
-# Use full Hack character set, not just a subset.
-# Switch this to true if you need full unicode support.
-# Defaults to false.
-use_full_hack_font = true
+```scss
+$font-text: "Your Font", Georgia, serif;
 ```
 
-Also see [Hack's docs](https://github.com/source-foundry/Hack/blob/master/docs/WEBFONT_USAGE.md).
+Only `$font-mono` is a webfont. JetBrains Mono ships as two variable
+`woff2` files in `static/fonts/`, declared in `sass/fonts.scss`. Each
+file spans the full 100-800 weight axis, so bold code costs no extra
+download, and the italic file is fetched only if the page renders
+italic monospace. Both use `font-display: swap` so text stays visible
+while the font loads.
+
+`$font-display` and `$font-text` are system font stacks. They download
+nothing and render natively on every platform. If you replace one with
+a webfont, add its `@font-face` block to `sass/fonts.scss`.
 
 ### Favicon
 
@@ -407,7 +413,8 @@ This theme has been forked from https://github.com/panr/hugo-theme-terminal
 - All references to external URLs (e.g. Google CDN) have been removed.
   This theme's static assets are meant to be served from where it's hosted.
 
-- [Hack](https://github.com/source-foundry/Hack) is the default font.
+- [JetBrains Mono](https://github.com/JetBrains/JetBrainsMono) is the default
+  font for code; body text and headings use system font stacks.
 
 - The default color theme is blue (original uses orange).
 
@@ -436,5 +443,5 @@ The theme is released under the MIT License.
 Check the [license file](../master/LICENSE.md)
 for more information.
 
-The license for Hack fonts used is included in
-[LICENSE-Hack.md](../master/LICENSE-Hack.md).
+JetBrains Mono is licensed under the SIL Open Font License 1.1, included in
+[LICENSE-JetBrainsMono.txt](../master/LICENSE-JetBrainsMono.txt).

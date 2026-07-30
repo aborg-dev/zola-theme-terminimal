@@ -1,0 +1,24 @@
+/*!
+ *  JetBrains Mono https://github.com/JetBrains/JetBrainsMono
+ *  License: SIL Open Font License 1.1, see LICENSE-JetBrainsMono.txt
+ */
+
+/* Variable fonts: one file per style covers the whole 100-800 weight
+ * axis, so bold text needs no extra download. The italic file is only
+ * fetched if the page actually renders italic monospace. */
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('fonts/JetBrainsMono-Variable.woff2') format('woff2');
+  font-weight: 100 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('fonts/JetBrainsMono-Italic-Variable.woff2') format('woff2');
+  font-weight: 100 800;
+  font-style: italic;
+  font-display: swap;
+}
