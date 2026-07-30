@@ -6,8 +6,8 @@ $tablet-max-width: 899px;
 // Three roles, used consistently throughout the theme:
 //
 //   $font-display  headings (h1-h6)
-//   $font-text     body copy and site chrome
-//   $font-mono     code, both inline and blocks
+//   $font-text     body copy
+//   $font-mono     code (inline and blocks), plus the header chrome
 //
 // Only $font-mono ships as a webfont (JetBrains Mono, see fonts.scss).
 // The other two are system font stacks, so they cost no download and

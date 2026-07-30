@@ -17,6 +17,11 @@
   flex-direction: column;
   position: relative;
 
+  // Site chrome stays monospaced even when body copy does not, which is
+  // what keeps the terminal character of the theme. Covers the logo and
+  // menu, both of which nest here.
+  font-family: $font-mono;
+
   &__inner {
     display: flex;
     align-items: center;
