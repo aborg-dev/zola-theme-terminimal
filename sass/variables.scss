@@ -5,19 +5,21 @@ $tablet-max-width: 899px;
 //
 // Three roles, used consistently throughout the theme:
 //
+//   $font-mono     code (inline and blocks) and the header chrome
 //   $font-display  headings (h1-h6)
 //   $font-text     body copy
-//   $font-mono     code (inline and blocks), plus the header chrome
 //
-// Only $font-mono ships as a webfont (JetBrains Mono, see fonts.scss).
-// The other two are system font stacks, so they cost no download and
-// render natively on every platform. These are the only places in the
-// theme where a typeface is named -- change them here and nowhere else.
-
-$font-display: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-               "Helvetica Neue", Arial, sans-serif;
-
-$font-text: Charter, "Bitstream Charter", "Sitka Text", Cambria, Georgia, serif;
+// $font-mono is the only webfont (JetBrains Mono, see fonts.scss).
+// $font-text is a system font stack, so it costs no download and renders
+// natively on every platform. These are the only places in the theme
+// where a typeface is named -- change them here and nowhere else.
 
 $font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas,
             "DejaVu Sans Mono", monospace;
+
+// Headings deliberately reuse the monospace face. Point this at its own
+// stack to give them a distinct display typeface; the role is already
+// wired up throughout the theme, so nothing else needs to change.
+$font-display: $font-mono;
+
+$font-text: Charter, "Bitstream Charter", "Sitka Text", Cambria, Georgia, serif;

@@ -296,9 +296,9 @@ The theme uses three font roles, defined as Sass variables at the top of
 
 | Variable | Applies to | Default |
 | --- | --- | --- |
-| `$font-display` | headings (`h1`-`h6`) | system sans-serif stack |
-| `$font-text` | body copy | Charter / Georgia serif stack |
 | `$font-mono` | `code`, `pre`, and the header (logo and menu) | JetBrains Mono (webfont) |
+| `$font-display` | headings (`h1`-`h6`) | same as `$font-mono` |
+| `$font-text` | body copy | Charter / Georgia serif stack |
 
 These variables are the only place in the theme where a typeface is
 named, so changing a font means editing one line:
