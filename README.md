@@ -298,7 +298,7 @@ The theme uses three font roles, defined as Sass variables at the top of
 | --- | --- | --- |
 | `$font-mono` | `code`, `pre`, and the header (logo and menu) | JetBrains Mono (webfont) |
 | `$font-display` | headings (`h1`-`h6`) | same as `$font-mono` |
-| `$font-text` | body copy | Charter / Georgia serif stack |
+| `$font-text` | body copy | Inter (webfont) |
 
 These variables are the only place in the theme where a typeface is
 named, so changing a font means editing one line:
@@ -307,16 +307,22 @@ named, so changing a font means editing one line:
 $font-text: "Your Font", Georgia, serif;
 ```
 
-Only `$font-mono` is a webfont. JetBrains Mono ships as two variable
-`woff2` files in `static/fonts/`, declared in `sass/fonts.scss`. Each
-file spans the full 100-800 weight axis, so bold code costs no extra
-download, and the italic file is fetched only if the page renders
-italic monospace. Both use `font-display: swap` so text stays visible
-while the font loads.
+Both typefaces are variable fonts, self-hosted from `static/fonts/` and
+declared in `sass/fonts.scss`. A single file spans the whole weight
+axis, so bold text needs no extra download, and the italic files are
+fetched only when the page actually renders italics. Every face sets
+`font-display: swap`, so text stays visible while fonts load.
 
-`$font-display` and `$font-text` are system font stacks. They download
-nothing and render natively on every platform. If you replace one with
-a webfont, add its `@font-face` block to `sass/fonts.scss`.
+Inter is additionally split by `unicode-range` into `latin` and
+`latin-ext` subsets -- the same ones Google Fonts serves. Browsers
+download only the ranges a page uses, so English text costs just the
+48 KB `latin` file. The fonts are served from your own site rather than
+a CDN, so no third party sees your visitors.
+
+If you swap in a font that is not already declared, add its
+`@font-face` block to `sass/fonts.scss`. Pointing a variable at a
+system stack instead (for example `Georgia, serif`) needs no font files
+at all.
 
 ### Favicon
 
@@ -414,7 +420,9 @@ This theme has been forked from https://github.com/panr/hugo-theme-terminal
   This theme's static assets are meant to be served from where it's hosted.
 
 - [JetBrains Mono](https://github.com/JetBrains/JetBrainsMono) is the default
-  font for code; body text and headings use system font stacks.
+  font for code, headings and the header chrome;
+  [Inter](https://github.com/rsms/inter) is the default for body text.
+  Both are self-hosted, so the theme still makes no external requests.
 
 - The default color theme is blue (original uses orange).
 
@@ -443,5 +451,7 @@ The theme is released under the MIT License.
 Check the [license file](../master/LICENSE.md)
 for more information.
 
-JetBrains Mono is licensed under the SIL Open Font License 1.1, included in
-[LICENSE-JetBrainsMono.txt](../master/LICENSE-JetBrainsMono.txt).
+JetBrains Mono and Inter are both licensed under the SIL Open Font
+License 1.1, included in
+[LICENSE-JetBrainsMono.txt](../master/LICENSE-JetBrainsMono.txt) and
+[LICENSE-Inter.txt](../master/LICENSE-Inter.txt).

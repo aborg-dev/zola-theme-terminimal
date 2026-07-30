@@ -9,10 +9,9 @@ $tablet-max-width: 899px;
 //   $font-display  headings (h1-h6)
 //   $font-text     body copy
 //
-// $font-mono is the only webfont (JetBrains Mono, see fonts.scss).
-// $font-text is a system font stack, so it costs no download and renders
-// natively on every platform. These are the only places in the theme
-// where a typeface is named -- change them here and nowhere else.
+// Both typefaces ship as self-hosted webfonts, declared in fonts.scss.
+// These variables are the only places in the theme where a typeface is
+// named -- change them here and nowhere else.
 
 $font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas,
             "DejaVu Sans Mono", monospace;
@@ -22,4 +21,5 @@ $font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas,
 // wired up throughout the theme, so nothing else needs to change.
 $font-display: $font-mono;
 
-$font-text: Charter, "Bitstream Charter", "Sitka Text", Cambria, Georgia, serif;
+$font-text: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+            "Helvetica Neue", Arial, sans-serif;
