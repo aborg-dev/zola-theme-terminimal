@@ -298,7 +298,7 @@ The theme uses three font roles, defined as Sass variables at the top of
 | --- | --- | --- |
 | `$font-mono` | `code`, `pre`, and the header (logo and menu) | JetBrains Mono (webfont) |
 | `$font-display` | headings (`h1`-`h6`) | same as `$font-mono` |
-| `$font-text` | body copy | Inter (webfont) |
+| `$font-text` | body copy | Literata (webfont) |
 
 These variables are the only place in the theme where a typeface is
 named, so changing a font means editing one line:
@@ -313,10 +313,10 @@ axis, so bold text needs no extra download, and the italic files are
 fetched only when the page actually renders italics. Every face sets
 `font-display: swap`, so text stays visible while fonts load.
 
-Inter is additionally split by `unicode-range` into `latin` and
+Literata is additionally split by `unicode-range` into `latin` and
 `latin-ext` subsets -- the same ones Google Fonts serves. Browsers
 download only the ranges a page uses, so English text costs just the
-48 KB `latin` file. The fonts are served from your own site rather than
+110 KB `latin` file. The fonts are served from your own site rather than
 a CDN, so no third party sees your visitors.
 
 If you swap in a font that is not already declared, add its
@@ -421,7 +421,8 @@ This theme has been forked from https://github.com/panr/hugo-theme-terminal
 
 - [JetBrains Mono](https://github.com/JetBrains/JetBrainsMono) is the default
   font for code, headings and the header chrome;
-  [Inter](https://github.com/rsms/inter) is the default for body text.
+  [Literata](https://github.com/googlefonts/literata) is the default for
+  body text.
   Both are self-hosted, so the theme still makes no external requests.
 
 - The default color theme is blue (original uses orange).
@@ -451,7 +452,7 @@ The theme is released under the MIT License.
 Check the [license file](../master/LICENSE.md)
 for more information.
 
-JetBrains Mono and Inter are both licensed under the SIL Open Font
+JetBrains Mono and Literata are both licensed under the SIL Open Font
 License 1.1, included in
 [LICENSE-JetBrainsMono.txt](../master/LICENSE-JetBrainsMono.txt) and
-[LICENSE-Inter.txt](../master/LICENSE-Inter.txt).
+[LICENSE-Literata.txt](../master/LICENSE-Literata.txt).

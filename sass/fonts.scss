@@ -1,6 +1,6 @@
 /*!
- *  Inter https://github.com/rsms/inter
- *  License: SIL Open Font License 1.1, see LICENSE-Inter.txt
+ *  Literata https://github.com/googlefonts/literata
+ *  License: SIL Open Font License 1.1, see LICENSE-Literata.txt
  *
  *  JetBrains Mono https://github.com/JetBrains/JetBrainsMono
  *  License: SIL Open Font License 1.1, see LICENSE-JetBrainsMono.txt
@@ -10,16 +10,16 @@
  * weight axis, so bold text needs no extra download, and the italic
  * files are fetched only if the page renders italics.
  *
- * Inter is additionally split by unicode-range, using the same subsets
+ * Literata is additionally split by unicode-range, using the same subsets
  * Google Fonts serves. A browser downloads only the ranges the page
  * actually uses -- for English text that is the latin subset alone
- * (48 KB), with latin-ext left untouched unless accented characters
+ * (110 KB), with latin-ext left untouched unless accented characters
  * appear. The files are self-hosted so no third party sees visitors. */
 
 @font-face {
-  font-family: 'Inter';
-  src: url('fonts/Inter-latin.woff2') format('woff2');
-  font-weight: 100 900;
+  font-family: 'Literata';
+  src: url('fonts/Literata-latin.woff2') format('woff2');
+  font-weight: 200 900;
   font-style: normal;
   font-display: swap;
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
@@ -29,9 +29,9 @@
 }
 
 @font-face {
-  font-family: 'Inter';
-  src: url('fonts/Inter-latin-ext.woff2') format('woff2');
-  font-weight: 100 900;
+  font-family: 'Literata';
+  src: url('fonts/Literata-latin-ext.woff2') format('woff2');
+  font-weight: 200 900;
   font-style: normal;
   font-display: swap;
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7,
@@ -41,9 +41,9 @@
 }
 
 @font-face {
-  font-family: 'Inter';
-  src: url('fonts/Inter-Italic-latin.woff2') format('woff2');
-  font-weight: 100 900;
+  font-family: 'Literata';
+  src: url('fonts/Literata-Italic-latin.woff2') format('woff2');
+  font-weight: 200 900;
   font-style: italic;
   font-display: swap;
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
@@ -53,9 +53,9 @@
 }
 
 @font-face {
-  font-family: 'Inter';
-  src: url('fonts/Inter-Italic-latin-ext.woff2') format('woff2');
-  font-weight: 100 900;
+  font-family: 'Literata';
+  src: url('fonts/Literata-Italic-latin-ext.woff2') format('woff2');
+  font-weight: 200 900;
   font-style: italic;
   font-display: swap;
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7,
